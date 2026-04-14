@@ -58,8 +58,7 @@ jobs:
           root_file: 2026Sp-main-cn.tex
           latexmk_use_xelatex: true
           pre_compile: |
-            apt-get update
-            apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
+            apk add --no-cache font-noto-cjk
 
       - name: Rename Chinese PDF
         if: steps.check_files.outputs.cn_exists == 'true'
@@ -72,8 +71,7 @@ jobs:
           root_file: 2026Sp-main-en.tex
           latexmk_use_xelatex: true
           pre_compile: |
-            apt-get update
-            apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
+            apk add --no-cache font-noto-cjk
 
       - name: Rename English PDF
         if: steps.check_files.outputs.en_exists == 'true'
