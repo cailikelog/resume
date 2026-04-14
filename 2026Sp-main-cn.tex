@@ -1,0 +1,173 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[UTF8]{ctex}
+
+\usepackage{xeCJK}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, urlcolor=blue]{hyperref}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-.55in}
+\addtolength{\textheight}{1.1in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[topsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{minipage}[c]{0.75\textwidth}
+    \textbf{\Huge \scshape 蔡礼珂} \\ \vspace{2pt}
+    {\setlength{\leftskip}{1em}\small
+    \\
+    15323871136 \textbar\ \href{mailto:123090006@link.cuhk.edu.cn}{\underline{likecai@cuhk.edu.cn}} \\
+    香港中文大学（深圳） \textbar\ 计算机工程（ECE） \textbar\ Sep. 2023 -- 至今\\
+    交换生，Aalto University，School of Science，芬兰 \textbar\ Sep. 2025 -- Dec. 2025\par}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.2\textwidth}
+    \raggedleft
+    \includegraphics[width=\linewidth, height=3cm, keepaspectratio=true]{img1.jpg}
+\end{minipage}
+
+\vspace{2pt}
+
+%-----------EXPERIENCE-----------
+\section{个人经历}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {CUHK(SZ) RoboMaster 战队}{}
+      {机械组成员}{Nov. 2023 -- 至今}
+      \resumeItemListStart
+        \resumeItem{持续参与战队机械设计与结构装配工作，具备从建模到实物装配的全流程经验}
+        \resumeItem{熟练操作 FDM/SLA 3D 打印机并具备日常维护能力}
+      \resumeItemListEnd
+
+    \resumeSubSubheading
+      {电控组成员}{Jun. 2024 -- 至今}
+      \resumeItemListStart
+        \resumeItem{参与嵌入式控制代码开发与调试，具备基本电子元件选型与 PCB 设计能力}
+        \resumeItem{跨机械与电控方向工作，理解机器人硬件系统的整体协作方式}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------INTERNS-----------
+\section{实习经历}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{香港应用科技研究院 (ASTRI)} $|$ \emph{先进硬件制造部门实习生}}{Jun. 2025 -- Aug. 2025}
+      \resumeItemListStart
+        \resumeItem{参与光储直柔绿色建筑项目，调研储能电池安全与 AI 结合的风险干预方案及十五全运会绿色场馆技术}
+        \resumeItem{使用 Figma 为楼宇智能化控制与 EMS 系统设计交互概念原型，完成从线框图到可交互 Demo 的全流程展示}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{项目经历}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{工程机器人末端分电板设计} $|$ \emph{立创EDA / 硬件设计 $|$ RoboMaster} $|$ \href{https://github.com/humble-learner006/my_PCB_works}{\underline{GitHub}}}{Oct. 2024 -- Nov. 2024}
+      \resumeItemListStart
+        \resumeItem{针对 6 DOF 机械臂末端走线复杂的问题，提出并主导设计专用末端分电板方案}
+        \resumeItem{统一末端供电与信号分配接口，显著降低后期维护难度}
+      \resumeItemListEnd
+    \resumeProjectHeading
+      {\textbf{视觉训练轨道机器人设计} $|$ \emph{机械设计与嵌入式控制 $|$ RoboMaster} $|$ \href{https://github.com/humble-learner006/Robomaster-Track-AA-Training-Robot}{\underline{GitHub}}}{Jun. 2025 -- Aug. 2025}
+      \resumeItemListStart
+        \resumeItem{主导设计并搭建长约 2 m 的轨道机器人，支持精确控制横移线速度与上部旋转角速度}
+        \resumeItem{为视觉组自动瞄准算法训练提供可重复的真实世界运动数据}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{飞镖系统换弹机构优化} $|$ \emph{机构设计 $|$ RoboMaster}}{Nov. 2025 -- Dec. 2025}
+      \resumeItemListStart
+        \resumeItem{基于西工大开源飞镖系统进行二次开发，将换弹机构从双叉结构优化为单侧轨道结构}
+        \resumeItem{换弹速度提升，结构零件数减少，降低维护成本}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------SKILLS-----------
+\section{相关技能}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{编程语言}{：Python, C/C++} \\
+     \textbf{机械设计}{：Fusion 360(S), 机床操作(B), 焊接(B)} \\
+     \textbf{电子/嵌入式}{：Keil5(M), 立创EDA PCB设计(B), FreeRTOS(B), 基本元器件选型} \\
+     \textbf{开发工具}{：Git(M), Docker(B), VS Code(S), MATLAB(B), ROS2(B)} \\
+     \textbf{其他}{：Figma(S), 3D打印机操作与维护} \\
+    }}
+ \end{itemize}
+ \small{\textit{S = 熟练, M = 中等, B = 初学}}
+
+\end{document}

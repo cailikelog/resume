@@ -1,0 +1,207 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{xeCJK}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+% \input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+% \pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Like CAI} \\ \vspace{3pt}
+%    \small 15323871136 $|$ \href{123090006@link.cuhk.edu.cn}{\underline{likecai@cuhk.edu.cn}} $|$
+    \small 15323871136 \textbar \href{mailto:123090006@link.cuhk.edu.cn}{\underline{likecai@cuhk.edu.cn}} 
+
+    %\href{https://linkedin.com/in/...}{\underline{linkedin.com/in/jake}} $|$
+    %\href{https://github.com/...}{\underline{github.com/jake}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education Background}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Shenzhen Middle School}{Luohu District, Shenzhen}
+      {Science Branch}{Sep. 2020 -- Jun. 2023}
+    \resumeSubheading
+      {The Chinese University of Hong Kong (Shenzhen)}{Longgang District, Shenzhen}
+      {Studying at the School of Science and Engineering}{Sep. 2023 -- Present}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {RoboMaster Competition Team}{}
+      {CUHK(SZ) RoboMaster - mechanical group}{Nov. 2023 -- Jun. 2024}
+      \resumeItemListStart
+        \resumeItem{Engaged in mechanical design and assembly tasks in team}
+        \resumeItem{Designed a light-weight battery and transformer mounting structures}
+        \resumeItem{Learned basic mechanical design skills and software operations}
+      \resumeItemListEnd
+
+% -----------Multiple Positions Heading-----------
+   \resumeSubSubheading
+    {CUHK(SZ) RoboMaster - electrical control group}{Jun. 2024 - Present}
+    \resumeItemListStart
+       \resumeItem{Deployed and tuned open-source power limiting codes}
+       \resumeItem{Selected basic electronic components, designed and tested a PCB for the distribution board}
+    \resumeItemListEnd
+   % \resumeSubHeadingListEnd
+%-------------------------------------------
+    \resumeSubheading
+      {3D Printing Enthusiast}{}
+      {CUHK (SZ) Library - Fablab}{Jan. 2024 -- Present}
+      \resumeItemListStart
+        \resumeItem{Knowledgeable about 3D printing materials, slicing software, Operated SAL and FDM 3D printers}
+        \resumeItem{Working on building a 3D printer based on open-source design}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {English debate team}{}
+      {CUHK (SZ) EDT}{Sep. 2023 - Jun. 2024}
+      \resumeItemListStart
+        \resumeItem{Macao Debate Open break}
+        \resumeItem{Reached the quarter-finals of the Supernova English Debate Tournament}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Project}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Game: Spirit in Campus} $|$ \emph{C++, SDL2}}{Sep. 2024 -- Jan. 2025}
+          \resumeItemListStart
+            \resumeItem{Developed a basic SDL game with teammates in course CSC3002 as a group leader}
+            \resumeItem{Implemented GitHub for version control in group}
+            \resumeItem{Learned basic project configuration skill}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Drive Mecanum wheel} $|$ \emph{C}}{2024 Summer}
+          \resumeItemListStart
+            \resumeItem{Read papers related to kinematic analysis to solve problems}
+            \resumeItem{Read documents and learned provided API}
+            \resumeItem{Basic knowledge of STM32 MCU and related software}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, C/C++} \\
+     % \textbf{Frameworks}{: React, Node.js, Flask, JUnit, WordPress, Material-UI, FastAPI} \\
+     \textbf{Developer Tools}{: Git(I), Docker(B), VS Code(S), Visual Studio(M), Keil5(M), SolidWorks(M), MATLAB(B)} \\
+     \textbf{Libraries}{: SDL2}
+    }}
+ \end{itemize}
+ \small{\textit{S = Skilled, M = Intermediate, B = Beginner}} 
+
+%-------------------------------------------
+\end{document}
+

@@ -1,0 +1,224 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[UTF8]{ctex}
+
+\usepackage{xeCJK}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+% \input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+% \pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape 蔡礼珂} \\ \vspace{3pt}
+%    \small 15323871136 $|$ \href{123090006@link.cuhk.edu.cn}{\underline{likecai@cuhk.edu.cn}} $|$
+    \small 15323871136 \textbar \href{mailto:123090006@link.cuhk.edu.cn}{\underline{likecai@cuhk.edu.cn}} 
+
+    %\href{https://linkedin.com/in/...}{\underline{linkedin.com/in/jake}} $|$
+    %\href{https://github.com/...}{\underline{github.com/jake}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{教育背景}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {香港中文大学（深圳）}{Longgang District, Shenzhen}
+      {计算机工程}{Sep. 2023 -- 至今}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{个人经历}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {图书馆 Fablab 3D打印工作室}{}
+      {学生助手}{Nov. 2023 -- 至今}
+      \resumeItemListStart
+            \resumeItem{熟练使用 Ultimaker， 拓竹， Formlab的3D打印机，并了解如何维护机器}
+            \resumeItem{利用在图书馆3D打印工作室的经验在宿舍搭建适用于A1 mini的隔音封箱}
+            \resumeItem{利用3D打印改造宿舍生活空间,灯架和排插支架的设计受到同学认可}
+            \resumeItem{参与制作公众号推文，内部教学视频。会写脚本，做分镜，视频剪辑}
+        
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {已修课程}{}
+      {ECE major, Computer Engineering Branch}{Nov. 2023 -- 至今}
+      \resumeItemListStart
+        \resumeItem{数学：微积分，线性代数，最优化}
+        \resumeItem{语言：C/C++, Python}
+        \resumeItem{计算机：数据结构，数据库，计算机体系结构，操作系统，机器学习}
+        \resumeItem{其他：数字逻辑系统，基础化学，物理}
+        
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {机甲大师比赛}{}
+      {CUHK(SZ) RoboMaster - 机械组}{Nov. 2023 -- 至今}
+      \resumeItemListStart
+        \resumeItem{在团队中从事机械设计及装配任务}
+        \resumeItem{设计了轻型的电池和变压器的固定结构，减轻车体重量，提高机器人性能}
+        \resumeItem{独立设计并制造了一款应用于机甲大师比赛飞镖系统的单边同步带驱动供弹装置}
+        \resumeItem{持续学习基本的机械设计技能和软件操作}
+      \resumeItemListEnd
+
+% -----------Multiple Positions Heading-----------
+   \resumeSubSubheading
+    {CUHK(SZ) RoboMaster - 电控组}{Jun. 2024 - 至今}
+    \resumeItemListStart
+       \resumeItem{部署并调整开源功率限制代码}
+       \resumeItem{基本电子元件选型，设计并测试分电板PCB}
+       \resumeItem{负责调试平衡机器人嵌入式部分代码}
+    \resumeItemListEnd
+   % \resumeSubHeadingListEnd
+%-------------------------------------------
+    % \resumeSubheading
+    %   {香港中文大学（深圳）英辩队}{}
+    %   {CUHK (SZ) EDT}{Sep. 2023 - Jun. 2024}
+    %   \resumeItemListStart
+    %     \resumeItem{澳门辩论赛 break}
+    %     \resumeItem{Supernova English Debate Tournament四分之一决赛}
+    %   \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+
+%-----------INTERNS-----------
+\section{实习经历}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{香港应用科技研究院 (ASTRI)} $|$ \emph{先进硬件制造部门实习生}}{Sep. 2024 -- Jan. 2025}
+          \resumeItemListStart
+            \resumeItem{项目与绿色建筑，楼宇智能化控制相关}
+            \resumeItem{做产品调研，对比现有楼宇智能控制控制产品的优劣，并对组内原型产品提出意见}
+            \resumeItem{负责前端界面的架构规划，使用 Figma 完成了从线框图到交互原型的全过程,并进行Demo展示}
+          \resumeItemListEnd
+
+          
+% %-----------PROJECTS-----------
+% \section{项目经历}
+%     \resumeSubHeadingListStart
+%       \resumeProjectHeading
+%           {\textbf{Game: Spirit in Campus} $|$ \emph{C++, SDL2}}{Sep. 2024 -- Jan. 2025}
+%           \resumeItemListStart
+%             \resumeItem{在课程 CSC3002 中作为小组组长与队友一起开发了一款基础 SDL 游戏}
+%             \resumeItem{使用 GitHub 进行项目版本控制}
+%             \resumeItem{学习了基本的项目配置技能}
+%           \resumeItemListEnd
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{相关技能}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, C/C++} \\
+     % \textbf{Frameworks}{: React, Node.js, Flask, JUnit, WordPress, Material-UI, FastAPI} \\
+     \textbf{Developer Tools}{: Git(I), Docker(B), VS Code(S), Visual Studio(M), Keil5(M), SolidWorks(M), Fusion360(S) MATLAB(B)} \\
+     \textbf{Libraries}{: SDL2}
+    }}
+ \end{itemize}
+ \small{\textit{S = 熟练, M = 中等, B = 初学}} 
+
+%-------------------------------------------
+\end{document}
+
