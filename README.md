@@ -6,8 +6,8 @@
 
 最新通用版简历始终可从下方链接获取：
 
-- 中文版：https://github.com/cailikelog/resume/releases/latest/download/蔡礼珂-简历.pdf
-- 英文版：https://github.com/cailikelog/resume/releases/latest/download/LikeCAI-resume.pdf
+- 中文版：https://github.com/cailikelog/resume/releases/latest/download/LikeCAI-Resume-CN.pdf
+- 英文版：https://github.com/cailikelog/resume/releases/latest/download/LikeCAI-Resume-EN.pdf
 
 查看所有历史版本：https://github.com/cailikelog/resume/releases
 
@@ -30,6 +30,12 @@
 - 定制版 tag 推送后，Release 会正常创建并可通过 tag 名访问，但不会覆盖 `latest`，保证稳定发送出去的通用版链接始终有效。
 - 公司名使用英文小写 + 短横线，不使用中文、空格、点号等特殊字符。
 - 同一家公司多次投递时，通过日期或岗位后缀区分，例如 `company-bytedance-2026.04-robotics`。
+
+几个提示：
+
+如果发现 tag 打错了想删掉重来，本地删 git tag -d v2026.04.14，远程删 git push origin --delete v2026.04.14，然后重新打。但注意如果 Actions 已经创建了 Release，还要去 GitHub 网页手动删掉对应的 Release（删 tag 不会自动删 Release）。
+以后每次打 tag 前最好确认 main 分支的源文件已经是你想要发布的状态，因为 Actions 编译的是 tag 指向的那个 commit 的内容。
+第一次正式发布跑通后，建议立刻把 releases/latest/download/ 链接填回到 tex 源文件里（作为"在线最新版"的超链接），然后再打一个新 tag v2026.04.14-1 或者 v2026.04.15 重新发布一次。这样 pdf 里的链接就形成了自引用的闭环。
 
 ### 发布流程示例
 
@@ -58,8 +64,8 @@
 
 自动编译的 PDF 输出文件名：
 
-- `2026Sp-main-cn.tex` → `蔡礼珂-简历.pdf`
-- `2026Sp-main-en.tex` → `LikeCAI-resume.pdf`
+- `2026Sp-main-cn.tex` → `LikeCAI-Resume-CN.pdf`
+- `2026Sp-main-en.tex` → `LikeCAI-Resume-EN.pdf`
 
 ## 编译环境
 

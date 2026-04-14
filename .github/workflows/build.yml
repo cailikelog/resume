@@ -62,7 +62,7 @@ jobs:
 
       - name: Rename Chinese PDF
         if: steps.check_files.outputs.cn_exists == 'true'
-        run: mv 2026Sp-main-cn.pdf 蔡礼珂-简历.pdf
+        run: mv 2026Sp-main-cn.pdf LikeCAI-Resume-CN.pdf
 
       - name: Compile English resume
         if: steps.check_files.outputs.en_exists == 'true'
@@ -75,17 +75,17 @@ jobs:
 
       - name: Rename English PDF
         if: steps.check_files.outputs.en_exists == 'true'
-        run: mv 2026Sp-main-en.pdf LikeCAI-resume.pdf
+        run: mv 2026Sp-main-en.pdf LikeCAI-Resume-EN.pdf
 
       - name: Collect artifacts
         id: collect
         run: |
           FILES=""
-          if [ -f "蔡礼珂-简历.pdf" ]; then
-            FILES="$FILES 蔡礼珂-简历.pdf"
+          if [ -f "LikeCAI-Resume-CN.pdf" ]; then
+            FILES="$FILES LikeCAI-Resume-CN.pdf"
           fi
-          if [ -f "LikeCAI-resume.pdf" ]; then
-            FILES="$FILES LikeCAI-resume.pdf"
+          if [ -f "LikeCAI-Resume-EN.pdf" ]; then
+            FILES="$FILES LikeCAI-Resume-EN.pdf"
           fi
           echo "files=$FILES" >> $GITHUB_OUTPUT
 
@@ -97,7 +97,7 @@ jobs:
           name: ${{ steps.release_type.outputs.title_prefix }} ${{ steps.release_type.outputs.tag_name }}
           make_latest: ${{ steps.release_type.outputs.make_latest }}
           files: |
-            蔡礼珂-简历.pdf
-            LikeCAI-resume.pdf
+            LikeCAI-Resume-CN.pdf
+            LikeCAI-Resume-EN.pdf
           fail_on_unmatched_files: false
           generate_release_notes: true
