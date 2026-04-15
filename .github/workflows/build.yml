@@ -3,8 +3,8 @@ name: Build Resume
 on:
   push:
     tags:
-      - 'v*'
-      - 'company-*'
+      - 'main-*'
+      - 'special-*'
   workflow_dispatch:
 
 jobs:
@@ -17,87 +17,74 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Determine release type
-        id: release_type
+      - name: Determine release type and find tex files
+        id: setup
         run: |
           TAG_NAME="${GITHUB_REF#refs/tags/}"
           echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
-          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+
+          if [[ "$GITHUB_REF" == refs/tags/main-* ]]; then
             echo "make_latest=true" >> $GITHUB_OUTPUT
             echo "title_prefix=简历" >> $GITHUB_OUTPUT
-          elif [[ "$GITHUB_REF" == refs/tags/company-* ]]; then
+            FILES=""
+            for f in *-main-cn.tex *-main-en.tex; do
+              [ -f "$f" ] && FILES="${FILES}${f}"$'\n'
+            done
+          elif [[ "$GITHUB_REF" == refs/tags/special-* ]]; then
             echo "make_latest=false" >> $GITHUB_OUTPUT
             echo "title_prefix=简历（定制版）" >> $GITHUB_OUTPUT
+            FILES=""
+            for f in *.tex; do
+              [[ "$f" != *-main-* ]] && FILES="${FILES}${f}"$'\n'
+            done
           else
             echo "make_latest=false" >> $GITHUB_OUTPUT
             echo "title_prefix=简历（调试）" >> $GITHUB_OUTPUT
+            FILES=""
           fi
 
-      - name: Check which source files exist
-        id: check_files
-        run: |
-          CN_EXISTS=false
-          EN_EXISTS=false
-          if [ -f "2026Sp-main-cn.tex" ]; then
-            CN_EXISTS=true
-          fi
-          if [ -f "2026Sp-main-en.tex" ]; then
-            EN_EXISTS=true
-          fi
-          echo "cn_exists=$CN_EXISTS" >> $GITHUB_OUTPUT
-          echo "en_exists=$EN_EXISTS" >> $GITHUB_OUTPUT
-          if [ "$CN_EXISTS" = "false" ] && [ "$EN_EXISTS" = "false" ]; then
-            echo "::error::No resume source files found."
+          if [ -z "$FILES" ]; then
+            echo "::error::No tex files found for this tag type."
             exit 1
           fi
 
-      - name: Compile Chinese resume
-        if: steps.check_files.outputs.cn_exists == 'true'
+          echo "tex_files<<EOF" >> $GITHUB_OUTPUT
+          printf '%s' "$FILES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Compile resumes
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: 2026Sp-main-cn.tex
+          root_file: ${{ steps.setup.outputs.tex_files }}
           latexmk_use_xelatex: true
           pre_compile: |
             apk add --no-cache font-noto-cjk
 
-      - name: Rename Chinese PDF
-        if: steps.check_files.outputs.cn_exists == 'true'
-        run: mv 2026Sp-main-cn.pdf LikeCAI-Resume-CN.pdf
-
-      - name: Compile English resume
-        if: steps.check_files.outputs.en_exists == 'true'
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: 2026Sp-main-en.tex
-          latexmk_use_xelatex: true
-          pre_compile: |
-            apk add --no-cache font-noto-cjk
-
-      - name: Rename English PDF
-        if: steps.check_files.outputs.en_exists == 'true'
-        run: mv 2026Sp-main-en.pdf LikeCAI-Resume-EN.pdf
-
-      - name: Collect artifacts
-        id: collect
+      - name: Rename PDFs
         run: |
-          FILES=""
-          if [ -f "LikeCAI-Resume-CN.pdf" ]; then
-            FILES="$FILES LikeCAI-Resume-CN.pdf"
-          fi
-          if [ -f "LikeCAI-Resume-EN.pdf" ]; then
-            FILES="$FILES LikeCAI-Resume-EN.pdf"
-          fi
-          echo "files=$FILES" >> $GITHUB_OUTPUT
+          for pdf in *.pdf; do
+            [ -f "$pdf" ] || continue
+            base="${pdf%.pdf}"
+            lang="${base##*-}"
+            LANG_UPPER=$(echo "$lang" | tr '[:lower:]' '[:upper:]')
+            note_part="${base%-*}"
+            note="${note_part#*-}"
+            if [ "$note" = "main" ]; then
+              new_name="LikeCAI-Resume-${LANG_UPPER}.pdf"
+            else
+              new_name="LikeCAI-Resume-${note}-${LANG_UPPER}.pdf"
+            fi
+            echo "Renaming $pdf -> $new_name"
+            mv "$pdf" "$new_name"
+          done
 
       - name: Create Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ steps.release_type.outputs.tag_name }}
-          name: ${{ steps.release_type.outputs.title_prefix }} ${{ steps.release_type.outputs.tag_name }}
-          make_latest: ${{ steps.release_type.outputs.make_latest }}
-          files: |
-            LikeCAI-Resume-CN.pdf
-            LikeCAI-Resume-EN.pdf
+          tag_name: ${{ steps.setup.outputs.tag_name }}
+          name: ${{ steps.setup.outputs.title_prefix }} ${{ steps.setup.outputs.tag_name }}
+          make_latest: ${{ steps.setup.outputs.make_latest }}
+          files: LikeCAI-Resume-*.pdf
           fail_on_unmatched_files: false
           generate_release_notes: true
