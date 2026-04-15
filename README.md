@@ -39,8 +39,8 @@
 
 | Tag 格式 | 用途 | 示例 | 是否设为 latest |
 |---|---|---|---|
-| `main-{yyyymmdd}` | 通用版发布，面向所有场合 | `main-20260414` | 是 |
-| `special-{yyyymmdd}` | 定制版发布，针对特定岗位类型 | `special-20260504` | 否 |
+| `main-v{yyyy.mm.dd}` | 通用版发布，面向所有场合 | `main-v2026.04.14` | 是 |
+| `special-v{yyyy.mm.dd}` | 定制版发布，针对特定岗位类型 | `special-v2026.05.04` | 否 |
 
 说明：
 
@@ -62,14 +62,14 @@
     git add 2026Sp-main-cn.tex
     git commit -m "更新项目经历"
     git push
-    git tag main-20260414
-    git push origin main-20260414
+    git tag main-v2026.04.14
+    git push origin main-v2026.04.14
 
 发布定制版（将 `2026Sp-3D_printing-cn.tex` 放入仓库后）：
 
     git commit -am "3D 打印岗位定制版"
-    git tag special-20260504
-    git push origin special-20260504
+    git tag special-v2026.05.04
+    git push origin special-v2026.05.04
 
 ## 编译环境
 

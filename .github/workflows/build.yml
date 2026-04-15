@@ -25,14 +25,12 @@ jobs:
 
           if [[ "$GITHUB_REF" == refs/tags/main-* ]]; then
             echo "make_latest=true" >> $GITHUB_OUTPUT
-            echo "title_prefix=简历" >> $GITHUB_OUTPUT
             FILES=""
             for f in *-main-cn.tex *-main-en.tex; do
               [ -f "$f" ] && FILES="${FILES}${f}"$'\n'
             done
           elif [[ "$GITHUB_REF" == refs/tags/special-* ]]; then
             echo "make_latest=false" >> $GITHUB_OUTPUT
-            echo "title_prefix=简历（定制版）" >> $GITHUB_OUTPUT
             FILES=""
             for f in *.tex; do
               [[ "$f" != *-main-* ]] && FILES="${FILES}${f}"$'\n'
@@ -83,7 +81,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.setup.outputs.tag_name }}
-          name: ${{ steps.setup.outputs.title_prefix }} ${{ steps.setup.outputs.tag_name }}
+          name: 简历-${{ steps.setup.outputs.tag_name }}
           make_latest: ${{ steps.setup.outputs.make_latest }}
           files: LikeCAI-Resume-*.pdf
           fail_on_unmatched_files: false
